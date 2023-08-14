@@ -9,11 +9,13 @@ import {UnControlledOnOf} from "./components/OnOff/UnControlledOnOf";
 import {ControlledInput} from "./components/ControlledInput/ControlledInput";
 import {ControlledCheckbox} from "./components/ControlledCheckbox/ControlledCheckbox";
 import {ControlledSelect} from "./components/ControlledSelect/ControlledSelect";
+import {Select} from "./components/CustomSelect/Select";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
     const [collapsed, setCollapsed] = useState<boolean>(false)
-    const [onOff, setOnOff]  = useState(false);
+    const [onOff, setOnOff] = useState(false);
+    const [value, setValue] = useState(null)
 
     return (
         <div className={'wrapper'}>
@@ -25,14 +27,15 @@ function App() {
             {/*<UnControlledAccordion titleValue={'Users'} />*/}
             {/*<UnControlledRating/>*/}
 
-            <Rating value={ratingValue}  onClick={setRatingValue}/>
+            <Rating value={ratingValue} onClick={setRatingValue}/>
 
             {/*<PageTitle title={'This is app component'}/>*/}
             {/*<PageTitle title={'My friends'}/>*/}
             {/*Article 1*/}
             {/*<UnControlledRating value={3}/>*/}
             {/*<Accordion titleValue={'Menu'} collapsed={true}/>*/}
-            <Accordion titleValue={'Users'} collapsed={collapsed} onClick={setCollapsed} items={['Alex', 'Dima', 'Viktor']}/>
+            <Accordion titleValue={'Users'} collapsed={collapsed} onClick={setCollapsed}
+                       items={['Alex', 'Dima', 'Viktor']}/>
             {/*Article 2*/}
             {/*<UnControlledRating value={0}/>*/}
             {/*<UnControlledRating value={1}/>*/}
@@ -45,6 +48,13 @@ function App() {
             <ControlledInput/>
             <ControlledCheckbox/>
             <ControlledSelect/>
+
+
+            <Select items={[
+                {title: 'Ekb', value: "1"},
+                {title: 'Msk', value: "2"},
+                {title: 'Spb', value: "3"}
+            ]} value={value} onChange={setValue}/>
         </div>
     );
 }
