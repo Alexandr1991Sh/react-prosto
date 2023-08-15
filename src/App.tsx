@@ -19,30 +19,28 @@ function App() {
 
     return (
         <div className={'wrapper'}>
-            {/*<OnOff/>*/}
-            <UnControlledOnOf onOff={onOff} setOnOff={setOnOff}/>
+            <div>
+                <p>onOff</p>
+                {/*<OnOff/>*/}
+                <UnControlledOnOf onOff={onOff} setOnOff={setOnOff}/>
+            </div>
 
+            <div>
+                <p>UnControlledAccordion</p>
+                <UnControlledAccordion titleValue={'Users'}/>
+            </div>
 
-            {/*<UnControlledAccordion titleValue={'Menu'} />*/}
-            {/*<UnControlledAccordion titleValue={'Users'} />*/}
-            {/*<UnControlledRating/>*/}
+            <div>
+                <p>Rating</p>
+                {/*<UnControlledRating/>*/}
+                <Rating value={ratingValue} onClick={setRatingValue}/>
+            </div>
 
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-
-            {/*<PageTitle title={'This is app component'}/>*/}
-            {/*<PageTitle title={'My friends'}/>*/}
-            {/*Article 1*/}
-            {/*<UnControlledRating value={3}/>*/}
-            {/*<Accordion titleValue={'Menu'} collapsed={true}/>*/}
-            <Accordion titleValue={'Users'} collapsed={collapsed} onClick={setCollapsed}
-                       items={['Alex', 'Dima', 'Viktor']}/>
-            {/*Article 2*/}
-            {/*<UnControlledRating value={0}/>*/}
-            {/*<UnControlledRating value={1}/>*/}
-            {/*<UnControlledRating value={2}/>*/}
-            {/*<UnControlledRating value={3}/>*/}
-            {/*<UnControlledRating value={4}/>*/}
-            {/*<UnControlledRating value={5}/>*/}
+            <div>
+                <p>Accordion</p>
+                <Accordion titleValue={'Users'} collapsed={collapsed} onClick={setCollapsed}
+                           items={['Alex', 'Dima', 'Viktor']}/>
+            </div>
 
 
             <ControlledInput/>
@@ -57,15 +55,6 @@ function App() {
             ]} value={value} onChange={setValue}/>
         </div>
     );
-}
-
-type PageTitlePropsType = {
-    title: string
-}
-
-function PageTitle(props: PageTitlePropsType) {
-    console.log('PageTitle rendering')
-    return <h1>{props.title}</h1>;
 }
 
 export default App;
