@@ -14,7 +14,7 @@ type SelectPropsType = {
 
 export const Select: React.FC<SelectPropsType> = ({value, onChange, items, ...restProps}) => {
 
-    const [active, setActive] = useState(true)
+    const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(value)
 
     const selectedItem = items.find(i => i.value === value)

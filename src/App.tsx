@@ -10,10 +10,11 @@ import {ControlledInput} from "./components/ControlledInput/ControlledInput";
 import {ControlledCheckbox} from "./components/ControlledCheckbox/ControlledCheckbox";
 import {ControlledSelect} from "./components/ControlledSelect/ControlledSelect";
 import {Select} from "./components/CustomSelect/Select";
+import {Example1} from "./ReactMemo/ReactMemo";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
-    const [collapsed, setCollapsed] = useState<boolean>(false)
+    const [collapsed, setCollapsed] = useState<boolean>(true)
     const [onOff, setOnOff] = useState(false);
     const [value, setValue] = useState(null)
 
@@ -48,11 +49,11 @@ function App() {
             <ControlledSelect/>
 
 
-            <Select items={[
-                {title: 'Ekb', value: "1"},
-                {title: 'Msk', value: "2"},
-                {title: 'Spb', value: "3"}
-            ]} value={value} onChange={setValue}/>
+            <Select items={[{title: 'Ekb', value: "1"}, {title: 'Msk', value: "2"}, {title: 'Spb', value: "3"}]}
+                    value={value} onChange={setValue}/>
+
+            <Example1/>
+
         </div>
     );
 }
