@@ -7,7 +7,7 @@ type AccordionPropsType = {
 }
 
 export function UnControlledAccordion(props: AccordionPropsType) {
-    console.log('Accordion rendering')
+    // console.log('Accordion rendering')
 
 
     // const [collapsed, setCollapsed] = useState(false)  // useState
@@ -34,7 +34,7 @@ type AccordionTitlePropsType = {
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
-    console.log('AccordionTitle rendering')
+    // console.log('AccordionTitle rendering')
 
     const onClickTitleHandler = () => {
         props.collapsedFunc()
@@ -44,7 +44,7 @@ function AccordionTitle(props: AccordionTitlePropsType) {
 }
 
 function AccordionBody() {
-    console.log('AccordionBody rendering')
+    // console.log('AccordionBody rendering')
     return <ul>
         <li>1</li>
         <li>2</li>

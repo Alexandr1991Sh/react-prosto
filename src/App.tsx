@@ -11,6 +11,7 @@ import {ControlledCheckbox} from "./components/ControlledCheckbox/ControlledChec
 import {ControlledSelect} from "./components/ControlledSelect/ControlledSelect";
 import {Select} from "./components/CustomSelect/Select";
 import {Example1} from "./ReactMemo/ReactMemo";
+import {HelpsToReactMemo, UseMemo} from "./UseMemo/UseMemoOne";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
@@ -53,6 +54,12 @@ function App() {
                     value={value} onChange={setValue}/>
 
             <Example1/>
+
+            <div>
+                <p>UseMemo</p>
+                <UseMemo/>
+                <HelpsToReactMemo/>
+            </div>
 
         </div>
     );

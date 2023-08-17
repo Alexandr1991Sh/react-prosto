@@ -12,7 +12,7 @@ type SelectPropsType = {
     items: ItemType[]
 }
 
-export const Select: React.FC<SelectPropsType> = ({value, onChange, items, ...restProps}) => {
+export const SelectMemo: React.FC<SelectPropsType> = ({value, onChange, items, ...restProps}) => {
 
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValue] = useState(value)
@@ -80,5 +80,6 @@ export const Select: React.FC<SelectPropsType> = ({value, onChange, items, ...re
     );
 };
 
+export const Select = React.memo(SelectMemo)
 
 

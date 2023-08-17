@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 
 export function UnControlledRating() {
-    console.log('UnControlledRating rendering')
+    // console.log('UnControlledRating rendering')
 
     const [value, setValue] = useState(0)
 
@@ -29,7 +29,7 @@ type StarPropsType = {
 }
 
 function Star(props: StarPropsType) {
-    console.log('Star rendering')
+    // console.log('Star rendering')
 
     const onClickButtonHandler = () => {
         props.addRating();

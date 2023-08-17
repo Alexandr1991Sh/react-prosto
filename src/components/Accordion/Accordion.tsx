@@ -8,8 +8,7 @@ type AccordionPropsType = {
 }
 
 function Accordion(props: AccordionPropsType) {
-    console.log('Accordion rendering')
-
+    // console.log('Accordion rendering')
     return <div>
         <AccordionTitle title={props.titleValue} onClick={props.onClick} collapsed={props.collapsed}/>
         {!props.collapsed && <AccordionBody items={props.items}/>}
@@ -24,7 +23,7 @@ type AccordionTitlePropsType = {
 }
 
 function AccordionTitle(props: AccordionTitlePropsType) {
-    console.log('AccordionTitle rendering')
+    // console.log('AccordionTitle rendering')
     const onClickHandler = () => {
         props.onClick(!props.collapsed)
     }
@@ -36,7 +35,7 @@ type AccordionBodyPropsType = {
 }
 
 function AccordionBody(props: AccordionBodyPropsType) {
-    console.log('AccordionBody rendering')
+    // console.log('AccordionBody rendering')
     return <ul>
         {props.items.map(i => <li>{i}</li>)}
     </ul>
