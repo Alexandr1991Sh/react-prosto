@@ -4,7 +4,6 @@ import s from './onOff.module.css'
 type UnControlledOnOfPropsType ={
     onOff: boolean
     setOnOff: any
-
 }
 
 export const UnControlledOnOf = (props: UnControlledOnOfPropsType) => {

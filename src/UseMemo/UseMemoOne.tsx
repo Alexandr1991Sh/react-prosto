@@ -48,7 +48,7 @@ export const UseMemo = () => {
 };
 
 const UsersSecret = (props: { users: Array<string> }) => {
-    console.log('Users Secret')
+    // console.log('Users Secret')
     return (
         <div>
             {props.users.map((u, i) => <div key={i}>{u}</div>)}
@@ -59,7 +59,7 @@ const UsersSecret = (props: { users: Array<string> }) => {
 const Users = React.memo(UsersSecret)
 
 export const HelpsToReactMemo = () => {
-    console.log('HelpsToReactMemo')
+    // console.log('HelpsToReactMemo')
     const [counter, setCounter] = useState(0)
     const [users, setUsers] = useState(['Alex', 'Dimych', 'Valera'])
 

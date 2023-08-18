@@ -12,6 +12,7 @@ import {ControlledSelect} from "./components/ControlledSelect/ControlledSelect";
 import {Select} from "./components/CustomSelect/Select";
 import {Example1} from "./ReactMemo/ReactMemo";
 import {HelpsToReactMemo, UseMemo} from "./UseMemo/UseMemoOne";
+import {UseCallback} from "./UseCallback/UseCallback";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
@@ -19,12 +20,18 @@ function App() {
     const [onOff, setOnOff] = useState(false);
     const [value, setValue] = useState(null)
 
+
+    const [showComponentUnControlledOnOf, setShowComponentUnControlledOnOf] = useState(false);
+    const onClickShowComponentUnControlledOnOf = () => {
+        setShowComponentUnControlledOnOf(!showComponentUnControlledOnOf);
+    };
+
     return (
         <div className={'wrapper'}>
             <div>
-                <p>onOff</p>
+                <button onClick={onClickShowComponentUnControlledOnOf}>onOff component</button>
                 {/*<OnOff/>*/}
-                <UnControlledOnOf onOff={onOff} setOnOff={setOnOff}/>
+                {showComponentUnControlledOnOf && <UnControlledOnOf onOff={onOff} setOnOff={setOnOff}/>}
             </div>
 
             <div>
@@ -59,6 +66,7 @@ function App() {
                 <p>UseMemo</p>
                 <UseMemo/>
                 <HelpsToReactMemo/>
+                <UseCallback/>
             </div>
 
         </div>
