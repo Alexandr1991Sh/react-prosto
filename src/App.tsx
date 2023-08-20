@@ -13,6 +13,7 @@ import {Select} from "./components/CustomSelect/Select";
 import {ReactMemo} from "./ReactMemo/ReactMemo";
 import {HelpsToReactMemo, UseMemo} from "./UseMemo/UseMemoOne";
 import {UseCallback} from "./UseCallback/UseCallback";
+import {UseState} from "./UseState/UseState";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
@@ -69,6 +70,11 @@ function App() {
     const [showUseMemo, setShowUseMemo] = useState(false);
     const onClickShowUseMemo = () => {
         setShowUseMemo(!showUseMemo);
+    };
+
+    const [showUseState, setShowUseState] = useState(false);
+    const onClickShowUseState = () => {
+        setShowUseState(!showUseState);
     };
 
 
@@ -144,6 +150,13 @@ function App() {
                 </div>}
 
             </div>
+            {/*UseMemo UseCallback*/}
+
+            <div>
+                <button onClick={onClickShowUseState}>UseState</button>
+                {showUseState && <UseState/>}
+            </div>
+            {/*UseState*/}
 
         </div>
     );
