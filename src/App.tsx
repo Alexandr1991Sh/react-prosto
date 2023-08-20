@@ -10,7 +10,7 @@ import {ControlledInput} from "./components/ControlledInput/ControlledInput";
 import {ControlledCheckbox} from "./components/ControlledCheckbox/ControlledCheckbox";
 import {ControlledSelect} from "./components/ControlledSelect/ControlledSelect";
 import {Select} from "./components/CustomSelect/Select";
-import {Example1} from "./ReactMemo/ReactMemo";
+import {ReactMemo} from "./ReactMemo/ReactMemo";
 import {HelpsToReactMemo, UseMemo} from "./UseMemo/UseMemoOne";
 import {UseCallback} from "./UseCallback/UseCallback";
 
@@ -21,52 +21,128 @@ function App() {
     const [value, setValue] = useState(null)
 
 
-    const [showComponentUnControlledOnOf, setShowComponentUnControlledOnOf] = useState(false);
-    const onClickShowComponentUnControlledOnOf = () => {
-        setShowComponentUnControlledOnOf(!showComponentUnControlledOnOf);
+    const [showUnControlledOnOf, setShowUnControlledOnOf] = useState(false);
+    const onClickShowUnControlledOnOf = () => {
+        setShowUnControlledOnOf(!showUnControlledOnOf);
     };
+
+    const [showUnControlledAccordion, setShowUnControlledAccordion] = useState(false);
+    const onClickShowUnControlledAccordion = () => {
+        setShowUnControlledAccordion(!showUnControlledAccordion);
+    };
+
+    const [showRating, setShowRating] = useState(false);
+    const onClickShowRating = () => {
+        setShowRating(!showRating);
+    };
+
+    const [showAccordion, setShowAccordion] = useState(false);
+    const onClickShowAccordion = () => {
+        setShowAccordion(!showAccordion);
+    };
+
+    const [showSelect, setShowSelect] = useState(false);
+    const onClickShowSelect = () => {
+        setShowSelect(!showSelect);
+    };
+
+    const [showControlledInput, setShowControlledInput] = useState(false);
+    const onClickShowControlledInput = () => {
+        setShowControlledInput(!showControlledInput);
+    };
+
+    const [showControlledCheckbox, setShowControlledCheckbox] = useState(false);
+    const onClickShowControlledCheckbox = () => {
+        setShowControlledCheckbox(!showControlledCheckbox);
+    };
+
+    const [showControlledSelect, setShowControlledSelect] = useState(false);
+    const onClickShowControlledSelect = () => {
+        setShowControlledSelect(!showControlledSelect);
+    };
+
+    const [showReactMemo, setShowReactMemo] = useState(false);
+    const onClickShowReactMemo = () => {
+        setShowReactMemo(!showReactMemo);
+    };
+
+    const [showUseMemo, setShowUseMemo] = useState(false);
+    const onClickShowUseMemo = () => {
+        setShowUseMemo(!showUseMemo);
+    };
+
 
     return (
         <div className={'wrapper'}>
+
             <div>
-                <button onClick={onClickShowComponentUnControlledOnOf}>onOff component</button>
+                <button onClick={onClickShowUnControlledOnOf}>onOff</button>
                 {/*<OnOff/>*/}
-                {showComponentUnControlledOnOf && <UnControlledOnOf onOff={onOff} setOnOff={setOnOff}/>}
+                {showUnControlledOnOf && <UnControlledOnOf onOff={onOff} setOnOff={setOnOff}/>}
             </div>
+            {/*onOff*/}
 
             <div>
-                <p>UnControlledAccordion</p>
-                <UnControlledAccordion titleValue={'Users'}/>
+                <button onClick={onClickShowUnControlledAccordion}>UnControlledAccordion</button>
+                {showUnControlledAccordion && <UnControlledAccordion titleValue={'Users'}/>}
             </div>
+            {/*UnControlledAccordion*/}
 
             <div>
-                <p>Rating</p>
+                <button onClick={onClickShowRating}>Rating</button>
+                {showRating && <Rating value={ratingValue} onClick={setRatingValue}/>}
                 {/*<UnControlledRating/>*/}
-                <Rating value={ratingValue} onClick={setRatingValue}/>
             </div>
+            {/*Rating*/}
 
             <div>
-                <p>Accordion</p>
-                <Accordion titleValue={'Users'} collapsed={collapsed} onClick={setCollapsed}
-                           items={['Alex', 'Dima', 'Viktor']}/>
+                <button onClick={onClickShowAccordion}>Accordion</button>
+                {showAccordion && <Accordion titleValue={'Users'} collapsed={collapsed} onClick={setCollapsed}
+                                             items={['Alex', 'Dima', 'Viktor']}/>}
             </div>
-
-
-            <ControlledInput/>
-            <ControlledCheckbox/>
-            <ControlledSelect/>
-
-
-            <Select items={[{title: 'Ekb', value: "1"}, {title: 'Msk', value: "2"}, {title: 'Spb', value: "3"}]}
-                    value={value} onChange={setValue}/>
-
-            <Example1/>
+            {/*Accordion*/}
 
             <div>
-                <p>UseMemo</p>
-                <UseMemo/>
-                <HelpsToReactMemo/>
-                <UseCallback/>
+                <button onClick={onClickShowControlledInput}>ControlledInput</button>
+                {showControlledInput && <ControlledInput/>}
+            </div>
+            {/*ControlledInput*/}
+
+            <div>
+                <button onClick={onClickShowControlledCheckbox}>ControlledCheckbox</button>
+                {showControlledCheckbox && <ControlledCheckbox/>}
+            </div>
+            {/*ControlledCheckbox*/}
+
+            <div>
+                <button onClick={onClickShowControlledSelect}>ControlledSelect</button>
+                {showControlledSelect && <ControlledSelect/>}
+            </div>
+            {/*ControlledSelect*/}
+
+            <div>
+                <button onClick={onClickShowSelect}>Select</button>
+                {showSelect &&
+                    <Select items={[{title: 'Ekb', value: "1"}, {title: 'Msk', value: "2"}, {title: 'Spb', value: "3"}]}
+                            value={value} onChange={setValue}/>}
+            </div>
+            {/*Select*/}
+
+            <div>
+                <button onClick={onClickShowReactMemo}>ReactMemo</button>
+                {showReactMemo && <ReactMemo/>}
+            </div>
+            {/*ReactMemo*/}
+
+            <div>
+
+                <button onClick={onClickShowUseMemo}>UseMemo UseCallback</button>
+                {showUseMemo && <div>
+                    <UseMemo/>
+                    <HelpsToReactMemo/>
+                    <UseCallback/>
+                </div>}
+
             </div>
 
         </div>
