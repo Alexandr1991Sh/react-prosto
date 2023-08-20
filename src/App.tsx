@@ -14,6 +14,7 @@ import {ReactMemo} from "./ReactMemo/ReactMemo";
 import {HelpsToReactMemo, UseMemo} from "./UseMemo/UseMemoOne";
 import {UseCallback} from "./UseCallback/UseCallback";
 import {UseState} from "./UseState/UseState";
+import {UseEffect} from "./components/UseEffect/UseEffect";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
@@ -75,6 +76,11 @@ function App() {
     const [showUseState, setShowUseState] = useState(false);
     const onClickShowUseState = () => {
         setShowUseState(!showUseState);
+    };
+
+    const [showUseEffect, setShowUseEffect] = useState(false);
+    const onClickShowUseEffect = () => {
+        setShowUseEffect(!showUseEffect);
     };
 
 
@@ -157,6 +163,12 @@ function App() {
                 {showUseState && <UseState/>}
             </div>
             {/*UseState*/}
+
+            <div>
+                <button onClick={onClickShowUseEffect}>UseEffect</button>
+                {showUseEffect && <UseEffect/>}
+            </div>
+            {/*UseEffect*/}
 
         </div>
     );
