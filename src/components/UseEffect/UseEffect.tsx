@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
-export default {
-    title: 'useEffect demo'
-}
+
 
 export const UseEffect = () => {
     const [counter, setCounter] = useState(1)
@@ -32,4 +30,5 @@ export const UseEffect = () => {
         <button onClick={() => {setFake(fake + 1)}}>fake +</button>
         <button onClick={() => {setCounter(counter + 1)}}>counter +</button>
     </>
+
 };

@@ -15,6 +15,9 @@ import {HelpsToReactMemo, UseMemo} from "./UseMemo/UseMemoOne";
 import {UseCallback} from "./UseCallback/UseCallback";
 import {UseState} from "./UseState/UseState";
 import {UseEffect} from "./components/UseEffect/UseEffect";
+import {UseEffectSetTimeout} from "./components/UseEffect/UseEffect-SetTimeout";
+import {UseEffectSetInterval} from "./components/UseEffect/UseEffect-SetInterval";
+import {ClockUseEffect} from "./components/UseEffect/Clock-UseEffect";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
@@ -81,6 +84,21 @@ function App() {
     const [showUseEffect, setShowUseEffect] = useState(false);
     const onClickShowUseEffect = () => {
         setShowUseEffect(!showUseEffect);
+    };
+
+    const [showUseEffectSetTimeout, setShowUseEffectSetTimeout] = useState(false);
+    const onClickShowUseEffectSetTimeout = () => {
+        setShowUseEffectSetTimeout(!showUseEffectSetTimeout);
+    };
+
+    const [showUseEffectSetInterval, setShowUseEffectSetInterval] = useState(false);
+    const onClickShowUseEffectSetInterval = () => {
+        setShowUseEffectSetInterval(!showUseEffectSetInterval);
+    };
+
+    const [showClockUseEffect, setShowClockUseEffect] = useState(false);
+    const onClickShowClockUseEffect= () => {
+        setShowClockUseEffect(!showClockUseEffect);
     };
 
 
@@ -169,6 +187,24 @@ function App() {
                 {showUseEffect && <UseEffect/>}
             </div>
             {/*UseEffect*/}
+
+            <div>
+                <button onClick={onClickShowUseEffectSetTimeout}>UseEffectSetTimeout</button>
+                {showUseEffectSetTimeout && <UseEffectSetTimeout/>}
+            </div>
+            {/*UseEffectSetTimeout*/}
+
+            <div>
+                <button onClick={onClickShowUseEffectSetInterval}>UseEffectSetInterval</button>
+                {showUseEffectSetInterval && <UseEffectSetInterval/>}
+            </div>
+            {/*UseEffectSetInterval*/}
+
+            <div>
+                <button onClick={onClickShowClockUseEffect}>ClockUseEffect</button>
+                {showClockUseEffect && <ClockUseEffect/>}
+            </div>
+            {/*ClockUseEffect*/}
 
         </div>
     );
