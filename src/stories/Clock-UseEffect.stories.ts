@@ -1,5 +1,5 @@
 import type {Meta, StoryObj} from '@storybook/react';
-import {ClockUseEffect} from "../components/UseEffect/Clock-UseEffect";
+import {ClockUseEffect} from "../components/UseEffect/Clock/Clock-UseEffect";
 
 const meta: Meta<typeof ClockUseEffect> = {
     title: 'TODOLISTS/ClockUseEffect',
@@ -9,19 +9,15 @@ const meta: Meta<typeof ClockUseEffect> = {
     },
 };
 
-
-
 export default meta;
 type Story = StoryObj<typeof ClockUseEffect>;
+
 export const BaseAnalogExample: Story = {
-    args:{
-        mode: 'analog'
-    }
+    args: {mode: 'analog'}
 }
+
 export const BaseDigitalExample: Story = {
-    args:{
-        mode: 'digital'
-    }
+    args: {mode: 'digital'}
 }
 
 

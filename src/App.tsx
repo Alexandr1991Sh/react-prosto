@@ -17,7 +17,7 @@ import {UseState} from "./UseState/UseState";
 import {UseEffect} from "./components/UseEffect/UseEffect";
 import {UseEffectSetTimeout} from "./components/UseEffect/UseEffect-SetTimeout";
 import {UseEffectSetInterval} from "./components/UseEffect/UseEffect-SetInterval";
-import {ClockUseEffect} from "./components/UseEffect/Clock-UseEffect";
+import {ClockUseEffect} from "./components/UseEffect/Clock/Clock-UseEffect";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
