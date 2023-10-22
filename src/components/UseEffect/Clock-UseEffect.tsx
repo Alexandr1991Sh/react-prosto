@@ -1,7 +1,10 @@
 import React, {useEffect, useState} from 'react';
 
+type PropsType = {
+    mode?: 'analog' | 'digital'
+}
 
-export const ClockUseEffect = () => {
+export const ClockUseEffect: React.FC<PropsType> = ({mode}) => {
 
     const [time, setTime] = useState(new Date().toString())
 
@@ -24,8 +27,18 @@ export const ClockUseEffect = () => {
 
     }, [time])
 
+    let view
+    switch (mode) {
+        case 'analog':
+            view = <span>ANALOG</span>
+            break
+        case "digital":
+        default:
+            view = <div style={{color: 'blue'}}>time: {time}</div>
+    }
+
     return <>
-        <div style={{color: 'blue'}}>time: {time}</div>
+        {view}
     </>
 
 };
