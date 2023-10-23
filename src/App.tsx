@@ -18,6 +18,7 @@ import {UseEffect} from "./components/UseEffect/UseEffect";
 import {UseEffectSetTimeout} from "./components/UseEffect/UseEffect-SetTimeout";
 import {UseEffectSetInterval} from "./components/UseEffect/UseEffect-SetInterval";
 import {ClockUseEffect} from "./components/UseEffect/Clock/Clock-UseEffect";
+import {ResetEffectExample} from "./components/UseEffect/ResetEffectExample/ResetEffectExample";
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(2)
@@ -99,6 +100,11 @@ function App() {
     const [showClockUseEffect, setShowClockUseEffect] = useState(false);
     const onClickShowClockUseEffect= () => {
         setShowClockUseEffect(!showClockUseEffect);
+    };
+
+    const [showResetEffectExample, setShowResetEffectExample] = useState(false);
+    const onClickShowResetEffectExample= () => {
+        setShowResetEffectExample(!showResetEffectExample);
     };
 
 
@@ -205,6 +211,12 @@ function App() {
                 {showClockUseEffect && <ClockUseEffect/>}
             </div>
             {/*ClockUseEffect*/}
+
+            <div>
+                <button onClick={onClickShowResetEffectExample}>ResetEffectExample</button>
+                {showResetEffectExample && <ResetEffectExample/>}
+            </div>
+            {/*ResetEffectExample*/}
 
         </div>
     );
