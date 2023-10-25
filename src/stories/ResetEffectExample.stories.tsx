@@ -12,7 +12,7 @@ const meta: Meta<typeof ResetEffectExample> = {
 export default meta;
 type Story = StoryObj<typeof ResetEffectExample>;
 
-export const ResetEffectExampl: Story = {}
+export const ResetEffectExam: Story = {}
 
 
 
